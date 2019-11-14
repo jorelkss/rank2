@@ -15,9 +15,9 @@
 			if(password_verify($val['password'], $dat['password'])){ // Verifica se a senha está correta
 				$user = new User($dat['user_id'], $dat['nome'], $dat['email']);
 				$_SESSION['an_user'] = $user; // Coloca os dados do usuário da sessão
-				//header("location: ".$GLOBALS['project_index']);
+				header("location: ".$GLOBALS['project_index']);
 			}
 		}
 	}
-	//header("location: ".$GLOBALS['project_index']);
+	header("location: ".$GLOBALS['project_index']);
 ?>

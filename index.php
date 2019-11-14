@@ -8,12 +8,11 @@
 	<title>Login - Teste</title>
 </head>
 <body>
-	<?php if(!isset($_SESSION['an_user'])){ ?>
 	<form action="Controller/login.php" method="POST">
 		<input type="text" name="email" placeholder="Email">
 		<input type="password" name="password" placeholder="*****">
 		<input type="submit" name="" value="Enviar">
 	</form>
-	<?php } ?>
+	<a href="registerForm.php">Registre-se</a>
 </body>
 </html>

@@ -5,7 +5,6 @@
 	session_start();
 
 	$gerente = new Manager();
-
 	if($gerente->select("SELECT * FROM palpites WHERE user_id = ".$_SESSION['an_user']->getId())){
 		$times = $gerente->select("SELECT * FROM palpites WHERE user_id = ".$_SESSION['an_user']->getId()." ORDER BY colocacao");
 	}else{

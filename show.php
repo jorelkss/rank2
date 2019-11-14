@@ -1,5 +1,6 @@
 <?php
 	include 'Model/User.php';
 	session_start();
-	if(isset($_SESSION['an_user'])) echo "Bem-vindo ".$_SESSION['an_user']->getNome()."";
+	if(isset($_SESSION['an_user'])) echo "Bem-vindo ".$_SESSION['an_user']->getNome()."<br>";
 ?>
+<a href="Controller/logout.php">logout</a>

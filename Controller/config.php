@@ -1,5 +1,5 @@
 <?php  
-	$project_name = "/rank";
+	$project_name = "/rank2";
 
 	$project_index = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].$project_name;
 
