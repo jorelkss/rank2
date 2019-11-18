@@ -7,22 +7,22 @@
 	$menos_distantes = $gerente->select("SELECT nome, distancia FROM user_tb ORDER BY distancia");
 	$mais_acertantes = $gerente->select("SELECT nome, acertos FROM user_tb ORDER BY acertos DESC");
 	$tamanho = sizeof($menos_distantes);
-	if(isset($_SESSION['an_user'])) echo "Bem-vindo ".$_SESSION['an_user']->getNome()."<br>";
+	echo "<br>";
 ?>
-<table>
+<table class="table table-hover">
 	<thead>
-		<tr>
-			<th>Colocação</th>
-			<th>Mais Acertos</th>
-			<th>Menor distância</th>
+		<tr class="table-light">
+			<th style="border: 0.5px solid black">Colocação</th>
+			<th style="border: 0.5px solid black">Mais Acertos</th>
+			<th style="border: 0.5px solid black">Menor distância</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php for($i = 0; $i < $tamanho; $i++){ ?>
-			<tr>
-				<td>#<?=$i+1?></td>
-				<td><?=$mais_acertantes[$i]['nome']?></td>
-				<td><?=$menos_distantes[$i]['nome']?></td>
+			<tr style="border: 0.5px solid black">
+				<td style="border: 0.5px solid black">#<?=$i+1?></td>
+				<td style="border: 0.5px solid black"><?=$mais_acertantes[$i]['nome']?></td>
+				<td style="border: 0.5px solid black"><?=$menos_distantes[$i]['nome']?></td>
 			</tr>
 		<?php } ?>
 	</tbody>

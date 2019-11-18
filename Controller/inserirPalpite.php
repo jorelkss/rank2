@@ -23,5 +23,5 @@
 		}
 	}
 	include_once 'calculador.php';
-	header("location: ".$project_index."/show.php");
+	header("location: ".$project_index."/userPage.php");
 ?>

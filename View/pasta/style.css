@@ -1,0 +1,33 @@
+.rightdiv{
+	width: 100%;
+	right: -120%;
+    position: fixed; /* Todo o menu fica fixo, assim ele acompanha a página ao fazer-mos scroll */
+
+    /* Faz a animação do menu deslizar em vez de aparecer logo aberto */
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.rightDiv {
+    right: 0; /* Coloca o menu na poisiçáo desejada de maneira a ficar visível */
+}
+
+
+.leftdiv{
+	width: 100%;
+	left: 0;
+    position: fixed; /* Todo o menu fica fixo, assim ele acompanha a página ao fazer-mos scroll */
+    /* Faz a animação do menu deslizar em vez de aparecer logo aberto */
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.leftDiv {
+    left: -120%;
+}
+
+
