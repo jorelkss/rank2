@@ -13,15 +13,16 @@
 
 <body>
     <div class="login-clean">
-        <form method="post" action="Controller/registerUser.php">
+        <form method="post" onsubmit="return check(event)" action="Controller/registerUser.php" id="form">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><img src="View/images/isss.gif" height="120" style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1);"></img></div>
             <div class="form-group"><span class="badge badge-warning" id="nameInp"></span></div>
-            <div class="form-group"><input class="form-control" onkeyup="verification(this.value)" type="text" name="nome" placeholder="Nome" required></div>
-            <div class="form-group"><input class="form-control" onkeyup="verification(this.value, 'email')" type="email" name="email" placeholder="Email" required></div>
+            <div class="form-group"><input class="form-control" onkeyup="verification(this.value, 'nome', 'nameInp');" type="text" name="nome" id="nome" placeholder="Nome" required></div>
+            <div class="form-group"><span class="badge badge-warning" id="emailInp"></span></div>
+            <div class="form-group"><input class="form-control" onkeyup="verification(this.value, 'email', 'emailInp');" type="email" name="email" id="email" placeholder="Email" required></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
             <br>
-            <div class="form-group" id="butao"><!----></div><a class="forgot" href="index.php">Já tem conta?</a>
+            <div class="form-group" id="butao"><button class="btn btn-dark btn-block" type="submit">Sign In</button></div><a class="forgot" href="index.php">Já tem conta?</a>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>

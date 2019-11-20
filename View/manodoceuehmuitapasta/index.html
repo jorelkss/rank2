@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="View/manodoceuehmuitapasta/assets/css/styles.css">
+    <link rel="stylesheet" href="View/manodoceuehmuitapasta/assets/css/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#table').load('table.php');
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="main-leftsidebar-div">
+            <div class="leftsidebarmenu">
+                <ul class="nav sidebar">
+                    <li class="nav-item d-flex module-search-nav-item">&nbsp;<i class="fas fa-coins d-xl-flex align-items-xl-center module-search-icon"></i>&nbsp;&nbsp;Bet666</li>
+                </ul>
+                <ul class="nav sidebar-first-menu scrollbar-indigo thin">
+                    <li class="nav-item d-flex"><a class="nav-link active" href="#" onclick="loadTeams('table')"><i class="fas fa-table"></i>&nbsp;&nbsp;&nbsp;Times</a></li>
+                    <li class="nav-item d-flex"><a class="nav-link active" href="#" onclick="loadRank('show')"><i class="fas fa-hashtag"></i>&nbsp;&nbsp;&nbsp;Rank</a></li>
+                    <li class="nav-item d-flex"><a class="nav-link active" href="Controller/logout.php"><i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <br>
+            <div class="row" id="table">
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="View/js/style.js"></script>
+    <script src="assets/js/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.js"></script>
+</body>
+
+</html>

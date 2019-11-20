@@ -27,5 +27,3 @@
 		<?php } ?>
 	</tbody>
 </table>
-
-<a href="Controller/logout.php">logout</a>
