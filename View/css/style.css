@@ -1,13 +1,11 @@
-.rightdiv{
-    width: 100%;
-    height: 100%;
-    right: -120%;
-    /*top: 0;*/
-    /*background-color: royalblue;
-    color: #fff;*/
-    position: fixed; /* Todo o menu fica fixo, assim ele acompanha a página ao fazer-mos scroll */
+::-webkit-scrollbar {
+    display: none;
+}
 
-    /* Faz a animação do menu deslizar em vez de aparecer logo aberto */
+.rightdiv{
+    width: 80%;
+    right: -120%;
+    position: fixed;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -15,19 +13,14 @@
 }
 
 .rightDiv {
-    right: 0; /* Coloca o menu na poisiçáo desejada de maneira a ficar visível */
+    right: 8%; 
 }
 
-
 .leftdiv{
-    width: 100%;
-    height: 100%;
-    left: 0;
-    /*top: 0;*/
-    /*background-color: royalblue;
-    color: #fff;*/
-    position: fixed; /* Todo o menu fica fixo, assim ele acompanha a página ao fazer-mos scroll */
-    /* Faz a animação do menu deslizar em vez de aparecer logo aberto */
+    width: 85%;
+    left: 12%;
+    position: fixed;
+    max-height: 100%;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -36,4 +29,10 @@
 
 .leftDiv {
     left: -120%;
+}
+
+@media (max-width: 768px) {
+    span {
+        display: none;
+    }
 }

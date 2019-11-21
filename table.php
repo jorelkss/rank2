@@ -28,20 +28,20 @@
 	<input type="submit" name="" value="Envia">
 </form>
 <?php }else{ ?>
-	<table class="table table-hover">
+	<table class="table table-hover table-bordered table-primary" style="overflow-y: scroll;">
 		<thead>
 			<tr>
-				<th>Colocação</th>
-				<th>Sua aposta</th>
-				<th>Resultado oficial</th>
+				<th scope="col">Colocação</th>
+				<th scope="col">Sua aposta</th>
+				<th scope="col">Resultado oficial</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach ($times as $key => $value) { ?>
 				<tr class="table-<?php echo $value['time'] == $colocacao[$i]['time'] ? 'success' : 'danger'; ?>">
-					<td>#<?=$i + 1?></td>
-					<td><img src="View/images/<?=$value['time']?>.png" height="40"> <?=$value['time']?></td>
-					<td><img src="View/images/<?=$colocacao[$i]['time']?>.png" height="40"> <?=$colocacao[$i]['time']?></td>
+					<td scope="row">#<?=$i + 1?></td>
+					<td><img src="View/images/<?=$value['time']?>.png" height="40"> <span><?=$value['time']?></span></td>
+					<td><img src="View/images/<?=$colocacao[$i]['time']?>.png" height="40"> <span><?=$colocacao[$i]['time']?></span></td>
 				</tr>
 				<?php $i++; ?>
 			<?php } ?>

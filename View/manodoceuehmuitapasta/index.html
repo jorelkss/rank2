@@ -4,44 +4,70 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
+    <title>Bet666</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="View/manodoceuehmuitapasta/assets/css/styles.css">
     <link rel="stylesheet" href="View/manodoceuehmuitapasta/assets/css/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.css">
+    <link rel="stylesheet" type="text/css" href="View/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
     <script type="text/javascript">
         $(document).ready(function (){
-            $('#table').load('table.php');
+            function callLeft(){
+                //$('#lefttable').load('table.php');
+                $('.leftdiv').toggleClass('leftDiv');
+                $('.rightdiv').toggleClass('rightDiv');
+                $('#times').off('click');
+                $('#rank').on('click', callRight);
+            }
+
+            function callRight(){
+                //$('#righttable').load('show.php');
+                $('.rightdiv').toggleClass('rightDiv');
+                $('.leftdiv').toggleClass('leftDiv');
+                $('#rank').off('click');
+                $('#times').on('click', callLeft);
+            }
+            
+            $('#rank').on('click', callRight);
+
+            $('#times').off('click');
+            $('#lefttable').load('table.php');
+            $('#righttable').load('show.php');
         });
     </script>
 </head>
 
-<body>
+<body style="background-color: #3e4041;">
     <div>
         <div class="main-leftsidebar-div">
             <div class="leftsidebarmenu">
                 <ul class="nav sidebar">
-                    <li class="nav-item d-flex module-search-nav-item">&nbsp;<i class="fas fa-coins d-xl-flex align-items-xl-center module-search-icon"></i>&nbsp;&nbsp;Bet666</li>
+                    <li class="nav-item d-flex module-search-nav-item">&nbsp;<i class="fas fa-coins d-xl-flex align-items-xl-center module-search-icon"></i>&nbsp;&nbsp;<h4>Bet666</h4></li>
                 </ul>
                 <ul class="nav sidebar-first-menu scrollbar-indigo thin">
-                    <li class="nav-item d-flex"><a class="nav-link active" href="#" onclick="loadTeams('table')"><i class="fas fa-table"></i>&nbsp;&nbsp;&nbsp;Times</a></li>
-                    <li class="nav-item d-flex"><a class="nav-link active" href="#" onclick="loadRank('show')"><i class="fas fa-hashtag"></i>&nbsp;&nbsp;&nbsp;Rank</a></li>
+                    <li class="nav-item d-flex"><a class="nav-link active" href="#" id="times"><i class="fas fa-table"></i>&nbsp;&nbsp;&nbsp;Times</a></li>
+                    <li class="nav-item d-flex"><a class="nav-link active" href="#" id="rank"><i class="fas fa-hashtag"></i>&nbsp;&nbsp;&nbsp;Rank</a></li>
                     <li class="nav-item d-flex"><a class="nav-link active" href="Controller/logout.php"><i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out</a></li>
                 </ul>
             </div>
         </div>
         <div class="container">
-            <br>
-            <div class="row" id="table">
-                
+            <div class="leftdiv">
+                <div id="lefttable" style="max-height: 700px; overflow-y: scroll;">
+                    
+                </div>
+            </div>
+            <div class="rightdiv">
+                <div id="righttable" style="max-height: 700px; overflow-y: scroll;">
+                    
+                </div>
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="View/js/style.js"></script>
-    <script src="assets/js/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.js"></script>
+    <script src="View/manodoceuehmuitapasta/assets/js/Vertical-Navigation-with-double-sub-menu--scroll-enable-by-Jigar-Mistry.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
 	$tamanho = sizeof($menos_distantes);
 	echo "<br>";
 ?>
-<table class="table table-hover">
+<table class="table table-hover table-bordered table-primary">
 	<thead>
 		<tr class="table-light">
 			<th style="border: 0.5px solid black">Colocação</th>

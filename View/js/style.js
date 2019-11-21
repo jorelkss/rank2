@@ -89,25 +89,4 @@ function check(e){
         //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send();
     }   
-}
-/*$(document).ready(function () {
-
-    function callLeft(){
-        $('.leftdiv').toggleClass('leftDiv');
-        $('.rightdiv').toggleClass('rightDiv');
-        $('#times').off('click');
-        $('#rank').on('click', callRight);
-    }
-
-    function callRight(){
-        $('.rightdiv').toggleClass('rightDiv');
-        $('.leftdiv').toggleClass('leftDiv');
-        $('#rank').off('click');
-        $('#times').on('click', callLeft);
-    }
-    
-    $('#rank').on('click', callRight);
-
-    $('#times').off('click');
-
-});*/
+}*/
