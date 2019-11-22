@@ -12,9 +12,27 @@
 	}else{
 		$times = $gerente->select("SELECT nome AS time FROM teams_tb ORDER BY colocacao");
 	}
-
-	$i = 0;
 ?>
+<!--<style type="text/css">
+	#a_list{
+		padding-left: 320px;
+	}
+
+	#b_list{
+		padding-left: 70px;
+	}
+
+	@media (max-width: 768px){
+		#a_list{
+			padding-left: 50px;
+			width: 150px;
+		}
+		#b_list{
+			padding-left: 10px;
+			width: 150px;
+		} 
+	}
+</style>-->
 <br>
 <!--<script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>-->
 <?php if(!$fez_palpites){ ?>
@@ -27,19 +45,19 @@
 
 	<input type="submit" name="" value="Envia">
 </form>
+<br><br>
 <?php }else{ ?>
 	<table class="table table-hover table-bordered table-primary" style="overflow-y: scroll;">
 		<thead>
 			<tr>
-				<th scope="col">Colocação</th>
 				<th scope="col">Sua aposta</th>
 				<th scope="col">Resultado oficial</th>
 			</tr>
 		</thead>
 		<tbody>
+			<?php $i = 0; ?>
 			<?php foreach ($times as $key => $value) { ?>
 				<tr class="table-<?php echo $value['time'] == $colocacao[$i]['time'] ? 'success' : 'danger'; ?>">
-					<td scope="row">#<?=$i + 1?></td>
 					<td><img src="View/images/<?=$value['time']?>.png" height="40"> <span><?=$value['time']?></span></td>
 					<td><img src="View/images/<?=$colocacao[$i]['time']?>.png" height="40"> <span><?=$colocacao[$i]['time']?></span></td>
 				</tr>
@@ -47,6 +65,31 @@
 			<?php } ?>
 		</tbody>
 	</table>
+	<!--<ol class="list-group" id="a_list">
+		<li class="list-group-item disabled">
+			Palpite
+		</li>
+		<?php $i = 0; ?>
+	<?php foreach ($times as $key => $value) { ?>
+		<li class="list-group-item list-group-item-<?php echo $value['time'] == $colocacao[$i]['time'] ? 'success' : 'danger'; ?>">
+			<img src="View/images/<?=$value['time']?>.png" height="40"><span><?=$value['time']?></span>
+		</li>
+		<?php $i++; ?>
+	<?php } ?>
+	</ol>
+	<ol class="list-group" id="b_list">
+		<li class="list-group-item disabled">
+			Resultado
+		</li>
+		<?php $i = 0; ?>
+	<?php foreach ($colocacao as $key => $value) { ?>
+		<li class="list-group-item list-group-item-<?php echo $value['time'] == $times[$i]['time'] ? 'success' : 'danger'; ?>">
+			<img src="View/images/<?=$value['time']?>.png" height="40"><span><?=$value['time']?></span>
+		</li>
+		<?php $i++; ?>
+	<?php } ?>
+	</ol>-->
+	<br><br><br>
 <?php } ?>
 <br>
 <?php if(!$fez_palpites){ ?>

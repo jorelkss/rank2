@@ -2,6 +2,12 @@
     display: none;
 }
 
+.list-group{
+    display:inline-block;
+}
+
+
+
 .rightdiv{
     width: 80%;
     right: -120%;
@@ -30,6 +36,7 @@
 .leftDiv {
     left: -120%;
 }
+
 
 @media (max-width: 768px) {
     span {
