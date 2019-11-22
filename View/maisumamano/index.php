@@ -14,8 +14,8 @@
         <form method="post" action="Controller/login.php">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><img src="View/images/isss.gif" height="120"></img></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
             <br>
             <div class="form-group"><button class="btn btn-dark btn-block" type="submit">Log In</button></div><a class="forgot" href="registerForm.php">Registre-se</a>
         </form>
