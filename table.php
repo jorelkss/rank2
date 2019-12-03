@@ -13,27 +13,12 @@
 		$times = $gerente->select("SELECT nome AS time FROM teams_tb ORDER BY colocacao");
 	}
 ?>
-<!--<style type="text/css">
-	#a_list{
-		padding-left: 320px;
-	}
-
-	#b_list{
-		padding-left: 70px;
-	}
-
-	@media (max-width: 768px){
-		#a_list{
-			padding-left: 50px;
-			width: 150px;
-		}
-		#b_list{
-			padding-left: 10px;
-			width: 150px;
-		} 
-	}
-</style>-->
 <br>
+<style type="text/css">
+	#a_list{
+		padding-left: 250px;
+	}
+</style>
 <!--<script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>-->
 <?php if(!$fez_palpites){ ?>
 <form action="Controller/inserirPalpite.php" method="POST">
@@ -45,9 +30,9 @@
 
 	<input type="submit" name="" value="Envia">
 </form>
-<br><br>
+<br><br><br><br>
 <?php }else{ ?>
-	<table class="table table-hover table-bordered table-primary" style="overflow-y: scroll;">
+	<!--<table class="table table-hover table-bordered table-primary" style="overflow-y: scroll;">
 		<thead>
 			<tr>
 				<th scope="col">Sua aposta</th>
@@ -64,34 +49,22 @@
 				<?php $i++; ?>
 			<?php } ?>
 		</tbody>
-	</table>
-	<!--<ol class="list-group" id="a_list">
-		<li class="list-group-item disabled">
+	</table>-->
+	<div class="list-group col-md-6" id="a_list">
+		<button class="list-group-item list-group-item-action disabled">
 			Palpite
-		</li>
+		</button>
 		<?php $i = 0; ?>
 	<?php foreach ($times as $key => $value) { ?>
-		<li class="list-group-item list-group-item-<?php echo $value['time'] == $colocacao[$i]['time'] ? 'success' : 'danger'; ?>">
-			<img src="View/images/<?=$value['time']?>.png" height="40"><span><?=$value['time']?></span>
-		</li>
+		<button class="list-group-item list-group-item-action list-group-item-<?php echo $value['time'] == $colocacao[$i]['time'] ? 'success' : 'danger'; ?>" data-toggle="popover" title="Resultado oficial" data-content="<img src='View/images/<?=$colocacao[$i]['time']?>.png' height='40'><span> &nbsp;&nbsp;&nbsp;<?=$colocacao[$i]['time']?></span>">
+			<img src='View/images/<?=$value['time']?>.png' height='40'><span> &nbsp;&nbsp;&nbsp;&nbsp;<?=$value['time']?></span>
+		</button>
 		<?php $i++; ?>
 	<?php } ?>
-	</ol>
-	<ol class="list-group" id="b_list">
-		<li class="list-group-item disabled">
-			Resultado
-		</li>
-		<?php $i = 0; ?>
-	<?php foreach ($colocacao as $key => $value) { ?>
-		<li class="list-group-item list-group-item-<?php echo $value['time'] == $times[$i]['time'] ? 'success' : 'danger'; ?>">
-			<img src="View/images/<?=$value['time']?>.png" height="40"><span><?=$value['time']?></span>
-		</li>
-		<?php $i++; ?>
-	<?php } ?>
-	</ol>-->
+	</div>
 	<br><br><br>
 <?php } ?>
-<br>
+<br><br>
 <?php if(!$fez_palpites){ ?>
 <script type="text/javascript">
 	var my_list = document.getElementById('my-list');
@@ -100,4 +73,13 @@
 		ghostClass: 'blue-background-class'
 	});
 </script>
+<?php }else{ ?>
+<script type="text/javascript">
+	$(function () {
+	  $('[data-toggle="popover"]').popover({
+	  	html: true,
+	  	trigger: 'hover'
+	  })
+	})
+</script>	
 <?php } ?>
