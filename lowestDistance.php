@@ -5,10 +5,10 @@
 	session_start();
 	$gerente = new Manager();
 	$menos_distantes = $gerente->select("SELECT nome, distancia FROM user_tb ORDER BY distancia");
-	$mais_acertantes = $gerente->select("SELECT nome, acertos FROM user_tb ORDER BY acertos DESC");
 	$tamanho = sizeof($menos_distantes);
 	echo "<br>";
 ?>
+<!--
 <table class="table table-hover table-bordered table-primary">
 	<thead>
 		<tr class="table-light">
@@ -26,5 +26,22 @@
 			</tr>
 		<?php } ?>
 	</tbody>
-</table>
-<br><br><br>
+</table>-->
+<div class="list-group list-group col-md-3">
+	<div class="list-group-item list-group-item-active">Menor distância &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="rank2">➤</a></div>
+	<?php for($i = 0; $i < $tamanho; $i++) { ?>
+		<div class="list-group-item list-group-item-primary">#<?=$i+1?> <?=$menos_distantes[$i]['nome']?></div>
+	<?php } ?>
+</div>
+<script type="text/javascript">
+	function callLeft(){
+        //$('#lefttable').load('table.php');
+        $('.rightdiv').toggleClass('rightDiv');
+        $('.rightdiv2').toggleClass('rightDiv2');
+        /*$('#rank').off('click');
+        $('#rank2').on('click', callRight);*/
+    }
+
+    $('#rank2').on('click', callLeft);
+</script>
+<br><br><br><br><br><br>

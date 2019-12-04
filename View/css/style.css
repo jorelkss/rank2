@@ -6,11 +6,9 @@
     display:inline-block;
 }
 
-
-
 .rightdiv{
     width: 80%;
-    right: -120%;
+    right: -50%;
     position: fixed;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -19,7 +17,21 @@
 }
 
 .rightDiv {
-    right: 8%; 
+    right: -100%; 
+}
+
+.rightdiv2{
+    width: 80%;
+    right: -100%;
+    position: fixed;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.rightDiv2 {
+    right: -50%; 
 }
 
 .leftdiv{
@@ -27,16 +39,7 @@
     left: 12%;
     position: fixed;
     max-height: 100%;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
 }
-
-.leftDiv {
-    left: -120%;
-}
-
 
 @media (max-width: 768px) {
     span {

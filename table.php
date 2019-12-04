@@ -14,15 +14,10 @@
 	}
 ?>
 <br>
-<style type="text/css">
-	#a_list{
-		padding-left: 250px;
-	}
-</style>
 <!--<script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>-->
 <?php if(!$fez_palpites){ ?>
 <form action="Controller/inserirPalpite.php" method="POST">
-	<ol id="my-list" class="list-group col">
+	<ol id="my-list" class="list-group col-md-3">
 	<?php foreach ($times as $key => $value) { ?>
 		<li class="list-group-item"><img src="View/images/<?=$value['time']?>.png" height="40"><?=$value['time']?><input type="hidden" name="<?=$value['time']?>" value="0"></li>
 	<?php } ?>
@@ -50,7 +45,7 @@
 			<?php } ?>
 		</tbody>
 	</table>-->
-	<div class="list-group col-md-6" id="a_list">
+	<div class="list-group col-md-3" id="a_list">
 		<button class="list-group-item list-group-item-action disabled">
 			Palpite
 		</button>
@@ -83,3 +78,5 @@
 	})
 </script>	
 <?php } ?>
+
+<br><br>

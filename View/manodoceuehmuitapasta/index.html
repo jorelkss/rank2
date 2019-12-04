@@ -13,53 +13,28 @@
     <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
     <script type="text/javascript">
         $(document).ready(function (){
-            function callLeft(){
-                //$('#lefttable').load('table.php');
-                $('.leftdiv').toggleClass('leftDiv');
-                $('.rightdiv').toggleClass('rightDiv');
-                $('#times').off('click');
-                $('#rank').on('click', callRight);
-            }
-
-            function callRight(){
-                //$('#righttable').load('show.php');
-                $('.rightdiv').toggleClass('rightDiv');
-                $('.leftdiv').toggleClass('leftDiv');
-                $('#rank').off('click');
-                $('#times').on('click', callLeft);
-            }
-            
-            $('#rank').on('click', callRight);
-
-            $('#times').off('click');
             $('#lefttable').load('table.php');
-            $('#righttable').load('show.php');
+            $('#righttable').load('lowestDistance.php');
+            $('#righttable2').load('mostCorrect.php');
         });
     </script>
 </head>
 
 <body style="background-color: #3e4041;">
     <div>
-        <div class="main-leftsidebar-div">
-            <div class="leftsidebarmenu">
-                <ul class="nav sidebar">
-                    <li class="nav-item d-flex module-nav-item">
-                        &nbsp;<img src="View/images/ranking.png" height="40">
-                    </li>
-                    <li class="nav-item d-flex module-nav-item">
-                        &nbsp;<img src="View/images/kicks.png" height="40">
-                    </li>
-                    <li class="nav-item d-flex module-nav-item">
-                        &nbsp;&nbsp;<h4>'S</h4>
-                    </li>
-                </ul>
-                <ul class="nav sidebar-first-menu scrollbar-indigo thin">
-                    <li class="nav-item d-flex"><a class="nav-link active" href="#" id="times"><i class="fas fa-table"></i>&nbsp;&nbsp;&nbsp;Times</a></li>
-                    <li class="nav-item d-flex"><a class="nav-link active" href="#" id="rank"><i class="fas fa-hashtag"></i>&nbsp;&nbsp;&nbsp;Rank</a></li>
-                    <li class="nav-item d-flex"><a class="nav-link active" href="Controller/logout.php"><i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;&nbsp;Log Out</a></li>
-                </ul>
+        <nav class="navbar navbar-light navbar-expand-lg bg-white transparency border-bottom border-light" id="transmenu">
+            <div class="container"><a class="navbar-brand text-dark" href="#"><img src="View/images/ranking.png" height="40"><img src="View/images/kicks.png" height="40"> <i class="fab fa-stripe-s"></i></a><button data-toggle="collapse" class="navbar-toggler collapsed" data-target="#navcol-1"><span></span><span></span><span></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">Bem-vindo <?=$_SESSION['an_user']->getNome()?>! Apostar é pecado!</li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Controller/logout.php"><h4>❌</h4></a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
         <div class="container">
             <div class="leftdiv">
                 <div id="lefttable" style="max-height: 700px; overflow-y: auto; scrollbar-width: none">
@@ -68,6 +43,11 @@
             </div>
             <div class="rightdiv">
                 <div id="righttable" style="max-height: 700px; overflow-y: auto; scrollbar-width: none;">
+                    
+                </div>
+            </div>
+            <div class="rightdiv2">
+                <div id="righttable2" style="max-height: 700px; overflow-y: auto; scrollbar-width: none;">
                     
                 </div>
             </div>
